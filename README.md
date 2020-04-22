@@ -2,10 +2,10 @@
 File created on 22nd April 2020
 
 ### Project Title
-Udacity-git-project
+Explored bikeshare data using python
 
 ### Description
-Exploring Git Functionalities
+Exploring python and Git Functionalities
 
 ### Files used
 bikeshare.py
