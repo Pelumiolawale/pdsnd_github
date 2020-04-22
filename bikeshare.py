@@ -23,7 +23,7 @@ def get_filters():
         if name in city:
             break
         else:
-            input('please try again bud: \n')       
+            input('please try again bud: \n')
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
@@ -32,7 +32,7 @@ def get_filters():
         print("please choose month between january and june")
     else:
         print('thanks!')
-                    
+
     # TO DO get user input for day of week (all, monday, tuesday, ... sunday)
     day = ['all','monday','tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     weekday = input('please input day of the week or type all to apply no day filter:\n').lower()
@@ -63,7 +63,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
 
     # TO DO: display the most common month
     df['month'] = df['Start Time'].dt.month
@@ -124,7 +124,7 @@ def trip_duration_stats(df):
 
 
     # TO DO: display mean travel time
-    mean_travel_time = (df['Trip Duration'].sum()/df['Trip Duration'].count())
+    mean_travel_time = (df['Trip Duration'].mean
     print("Mean travel time was:", mean_travel_time)
 
 
@@ -144,16 +144,16 @@ def user_stats(df):
 
 
     # TO DO: Display counts of gender
-    
+
     if 'Gender' in df.columns:
         gender_count = df['Gender'].value_counts()
         print(gender_count)
-        
-        
+
+
     else:
         print('Gender column not included in this Data Base')
-        
-        
+
+
     # TO DO: Display earliest, most recent, and most common year of birth
 
     if 'Birth Year' not in df.columns:
@@ -171,7 +171,7 @@ def user_stats(df):
     print('-'*40)
 
 def raw_data(df):
-    
+
     row_num = 0
     raw_data = input('Would you like to view the raw data ? Enter yes or no.\n')
     while True:
@@ -182,8 +182,8 @@ def raw_data(df):
             raw_data = input('Would you like to see more data? Enter yes or no.\n')
         else:
             break
-            
-                             
+
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -202,7 +202,7 @@ def main():
 
 if __name__ == "__main__":
 	main()
-    
 
-        
+
+
 # Note that i consulted the Pandas library: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html for concepts which were unclear
